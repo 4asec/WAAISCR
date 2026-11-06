@@ -1,0 +1,49 @@
+# Link Curator Configuration
+app:
+  name: "Link Curator"
+  version: "0.1.0"
+  env: "development"
+  host: "127.0.0.1"
+  port: 8000
+
+# Whitelist: List of phone numbers in international format allowed to interact with the bot.
+# Anyone not in this list will be silently ignored.
+# (Bisa diisi di sini atau di file .env via WHITELIST_PHONE_NUMBERS)
+whitelist:
+  phone_numbers:
+    - "6281234567890"      # Nomor HP pemilik (format internasional tanpa +)
+
+# WhatsApp Gateway Adapter settings
+whatsapp:
+  auth_method: "qr"             # "qr" atau "pairing"
+  phone_number: ""              # Nomor HP nomor kedua untuk pairing code (contoh: "6281234567890")
+  gateway_url: "http://127.0.0.1:3001"
+  reconnect_max_attempts: 10
+  send_delay_min_ms: 1000       # Anti-ban: jeda acak antar balasan
+  send_delay_max_ms: 3000
+
+# Group behaviors
+groups:
+  default_role: "ignore"        # links | tugas | pdf | ignore
+  default_reply_mode: "quiet"   # quiet (kirim ke DM) | group_reply
+  group_rules: {}
+
+# LLM Provider settings
+llm:
+  provider: "gemini"            # "gemini" atau "ollama"
+  model: "gemini-3.5-flash-lite"
+  timeout_seconds: 45
+  max_retries: 3
+  rate_limit:
+    requests_per_minute: 15
+    tokens_per_minute: 1000000
+
+# Formatting settings
+formatting:
+  term_badge: "🔹"
+  bold_terms: true
+  meta_ai_style: true
+
+# Storage
+storage:
+  database_url: "sqlite+aiosqlite:///data/link_curator.db"
