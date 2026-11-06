@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Environment and secrets
+.env
+*.env
+auth/*
+!auth/.gitkeep
+
+# SQLite and local storage
+data/*
+!data/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# Node.js
+node_modules/
+gateway/whatsapp/node_modules/
+gateway/whatsapp/sessions/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Playwright & Browser Sessions
+dummy_sessions/
+.playwright/
+
+# Logs & OS
+logs/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+

@@ -1,0 +1,1 @@
+# Keeps data directory present in git while ignoring sqlite files
